@@ -20,7 +20,11 @@ BenchStore.__onDispatch = function (payload) {
       resetBenches(payload.benches);
       BenchStore.__emitChange();
       break;
+		case BenchConstants.NEW_BENCH:
+			resetBenches(payload.bench);
+			BenchStore.__emitChange();
     }
+
   };
 
 window.BenchStore = BenchStore;

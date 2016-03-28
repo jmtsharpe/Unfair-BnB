@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+ * {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
+
+/*/ Header and such /*/
+
+.super-header {
+	margin: auto;
+	height: 300px;
+	width: 100%;
+	position: relative;
+	text-align: center;
+	padding: 20px;
+}
+
+/*/ Map Styling /*/
+.map {
+	margin: auto;
+	width: 500px;
+	height: 500px;
+}

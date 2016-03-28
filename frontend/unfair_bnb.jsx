@@ -1,14 +1,22 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var BenchStore = require('./stores/bench');
-var ApiUtil = require('./util/api_util');
-var Index = require('./components/index');
+var ReactRouter = require('react-router');
+var Router = ReactRouter.Router;
+var Route = ReactRouter.Route;
+var IndexRoute = ReactRouter.IndexRoute;
+var Search = require('./components/Search');
+var App = require('./components/App');
+var BenchForm = require('./components/BenchForm');
 
-document.addEventListener("DOMContentLoaded", function () {
-  // old version, you didn't need to pass in hashHistory or browserHistory
 
-  ReactDOM.render(
-    <div id="content"><Index /></div>,
-    document.getElementById('root')
-  );
+var routes = (
+  <Route path="/" component={App}>
+		<IndexRoute component={Search}/>
+		<Route path="benches/new" component={BenchForm}/>
+  </Route>
+);
+
+$( document ).ready(function() {
+	var root = document.getElementById('content');
+	ReactDOM.render(<Router>{routes}</Router>, root);
 });
